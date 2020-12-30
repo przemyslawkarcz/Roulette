@@ -13,7 +13,7 @@ public class Roulette implements RouletteClassInterface{
     // The class focuses methods directly related to roulette
 
     // The 'main' method that plays the game
-    public static void playRoluette(Integer someFieldsAmount){
+    public static void playRoulette(Integer someFieldsAmount){
 
         Integer checkedNumberOfFields = checksNumberOfFieldsAtStartOfGame(someFieldsAmount);
 

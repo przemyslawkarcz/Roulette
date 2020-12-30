@@ -1,6 +1,6 @@
 package Roulette;
 
-import static Roulette.Roulette.playRoluette;
+import static Roulette.Roulette.playRoulette;
 
 public class Main {
 
@@ -11,7 +11,7 @@ public class Main {
         // we only choose integers.
 
         // Primary game method
-        playRoluette(3);
+        playRoulette(3);
 
     }
 
