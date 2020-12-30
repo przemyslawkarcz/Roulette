@@ -11,8 +11,8 @@ Betting on colors (black, red) and numbers (even, odd) has not been prepared in 
 To play go to the Main class.
 
 Technologies used in the project are:
-IDE: IntelliJ Idea Community
-Java: 1.8
+IDE - IntelliJ Idea Community; 
+Java - 1.8
 
 Contact data:
 
