@@ -3,7 +3,7 @@ package Roulette;
 import java.util.Scanner;
 import static Roulette.ControlClass.checksDataFormat;
 
-public class WalletClass implements WallateClassInterface{
+public class WalletClass implements WalletClassInterface {
 
     // The class concentrates methods controlling the player's wallet before, during and after the game
 
@@ -40,12 +40,12 @@ public class WalletClass implements WallateClassInterface{
     }
 
     // A 'getter' method that gives access to the wallet
-    private static Integer getWalletContentParsedToInteger() {
+    public static Integer getWalletContentParsedToInteger() {
         return walletContentParsedToInteger;
     }
 
     // A method that checks enough cash in wallet
-    private static Integer checksWalletContent(Integer someInteger) {
+    public Integer checksWalletContent(Integer someInteger) {
 
         if (someInteger <= 0){
             System.out.println("You don't have enough resources to play!");

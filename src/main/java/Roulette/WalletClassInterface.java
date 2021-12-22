@@ -1,12 +1,10 @@
 package Roulette;
 
-public interface WallateClassInterface {
+public interface WalletClassInterface {
 
     void checksWalletBeforeGame();
 
-    static Integer checksWalletContent(Integer someInteger){
-        return 0;
-    }
+    Integer checksWalletContent(Integer someInteger);
 
     void checksWalletAfterGame(Integer someWin);
 

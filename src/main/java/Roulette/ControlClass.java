@@ -42,7 +42,6 @@ public class ControlClass implements ControlClassInterface{
         }
 
         return someAmountsOfFields;
-
     }
 
 }
