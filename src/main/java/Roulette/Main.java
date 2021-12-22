@@ -1,7 +1,5 @@
 package Roulette;
 
-//import static Roulette.Roulette.playRoulette;
-
 public class Main {
 
     public static void main(String[] args) {

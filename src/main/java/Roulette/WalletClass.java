@@ -1,7 +1,6 @@
 package Roulette;
 
 import java.util.Scanner;
-
 import static Roulette.ControlClass.checksDataFormat;
 
 public class WalletClass implements WallateClassInterface{

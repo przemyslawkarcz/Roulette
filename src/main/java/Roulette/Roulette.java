@@ -2,12 +2,7 @@ package Roulette;
 
 import java.util.Random;
 import java.util.Scanner;
-
 import static Roulette.WalletClass.walletContentParsedToInteger;
-//import static Roulette.ControlClass.checksIfSelectedFieldsAreInRange_0_36;
-//import static Roulette.ControlClass.checksNumberOfFieldsAtStartOfGame;
-//import static Roulette.PrintClass.printsFieldsAndRatesChosenByPlayer;
-//import static Roulette.WalletClass.*;
 
 public class Roulette implements RouletteClassInterface{
 
@@ -92,7 +87,7 @@ public class Roulette implements RouletteClassInterface{
     }
 
     // A method that checks the result of the draw and compares the result with the roulette fields bet
-    private void checksIfItHasBeenWon(Integer[] someFieldsArray, Integer someInteger, Integer[] someRatesArray){
+    public void checksIfItHasBeenWon(Integer[] someFieldsArray, Integer someInteger, Integer[] someRatesArray){
 
         WalletClass walletClass = new WalletClass();
 

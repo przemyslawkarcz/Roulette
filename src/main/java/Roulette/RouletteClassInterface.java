@@ -2,8 +2,8 @@ package Roulette;
 
 public interface RouletteClassInterface {
 
-    static void playRoluette(Integer someFieldsAmount){}
+    void playRoulette(Integer someFieldsAmount);
 
-    static void checksIfItHasBeenWon(Integer[] someFieldsArray, Integer someInteger, Integer[] someRatesArray){}
+    void checksIfItHasBeenWon(Integer[] someFieldsArray, Integer someInteger, Integer[] someRatesArray);
 
 }
