@@ -10,6 +10,7 @@ Technologies used in the project are:
 IDE - IntelliJ Idea Community; 
 Java - 1.8;
 Maven;
+TDD.
 
 Contact data:
 
