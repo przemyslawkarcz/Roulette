@@ -5,7 +5,7 @@ public class PrintClass implements PrintClassInterface{
     // The class is intended for data printing and data presentation
 
     // The method prints chosen by player roulette fields and corresponding rates
-    public static void printsFieldsAndRatesChosenByPlayer(Integer[] someFieldsArray, Integer[] someRatesArray){
+    public void printsFieldsAndRatesChosenByPlayer(Integer[] someFieldsArray, Integer[] someRatesArray){
 
         System.out.println("\n* * * Chosen Fields & Rates * * *");
         System.out.print("Fields: ");

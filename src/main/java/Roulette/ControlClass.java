@@ -5,7 +5,7 @@ public class ControlClass implements ControlClassInterface{
     // The class contains methods that check correctness of the number of fields and number formats
 
     // The method checks if the player correctly uses fields from 0 to 36
-    public static Integer checksIfSelectedFieldsAreInRange_0_36(Integer someInteger) {
+    public Integer checksIfSelectedFieldsAreInRange_0_36(Integer someInteger) {
 
         if (someInteger < 0 || someInteger > 36) {
 
@@ -33,7 +33,7 @@ public class ControlClass implements ControlClassInterface{
     }
 
     // The method checks the number of fields at start of the game
-    public static Integer checksNumberOfFieldsAtStartOfGame(Integer someAmountsOfFields){
+    public Integer checksNumberOfFieldsAtStartOfGame(Integer someAmountsOfFields){
 
         if (someAmountsOfFields <= 0 || someAmountsOfFields > 37){
             System.out.println("You have entered an invalid number of fields, which interrupted the game!");

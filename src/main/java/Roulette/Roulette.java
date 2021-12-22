@@ -3,26 +3,31 @@ package Roulette;
 import java.util.Random;
 import java.util.Scanner;
 
-import static Roulette.ControlClass.checksIfSelectedFieldsAreInRange_0_36;
-import static Roulette.ControlClass.checksNumberOfFieldsAtStartOfGame;
-import static Roulette.PrintClass.printsFieldsAndRatesChosenByPlayer;
-import static Roulette.WalletClass.*;
+import static Roulette.WalletClass.walletContentParsedToInteger;
+//import static Roulette.ControlClass.checksIfSelectedFieldsAreInRange_0_36;
+//import static Roulette.ControlClass.checksNumberOfFieldsAtStartOfGame;
+//import static Roulette.PrintClass.printsFieldsAndRatesChosenByPlayer;
+//import static Roulette.WalletClass.*;
 
 public class Roulette implements RouletteClassInterface{
 
     // The class focuses methods directly related to roulette
 
     // The 'main' method that plays the game
-    public static void playRoulette(Integer someFieldsAmount){
+    public void playRoulette(Integer someFieldsAmount){
 
-        Integer checkedNumberOfFields = checksNumberOfFieldsAtStartOfGame(someFieldsAmount);
+        ControlClass controlClass = new ControlClass();
+        PrintClass printClass = new PrintClass();
+        WalletClass walletClass = new WalletClass();
+
+        Integer checkedNumberOfFields = controlClass.checksNumberOfFieldsAtStartOfGame(someFieldsAmount);
 
         // Checks amount of fields
         if (checkedNumberOfFields <= 0){
             return;
         }
 
-        checksWalletBeforeGame();
+        walletClass.checksWalletBeforeGame();
 
         // Checks data format
         if (walletContentParsedToInteger == null){
@@ -48,7 +53,7 @@ public class Roulette implements RouletteClassInterface{
                 System.out.print("Select your field " + (i + 1) + ": ");
                 int selectedField = scannerForRouletteFields.nextInt();
 
-                Integer fieldsCheckedAgainstTheRange_0_36 = checksIfSelectedFieldsAreInRange_0_36(selectedField);
+                Integer fieldsCheckedAgainstTheRange_0_36 = controlClass.checksIfSelectedFieldsAreInRange_0_36(selectedField);
 
                 if (fieldsCheckedAgainstTheRange_0_36 == 12349888) {
                     return;
@@ -62,7 +67,7 @@ public class Roulette implements RouletteClassInterface{
                 System.out.print("Enter the rate for the field " + (j + 1) + ": ");
                 int selectedRate = scannerForCashRatesForFields.nextInt();
 
-                Integer checkedWalletContentForBetting = checksWalletContentWhenBettingOnFields(selectedRate);
+                Integer checkedWalletContentForBetting = walletClass.checksWalletContentWhenBettingOnFields(selectedRate);
 
                 if (checkedWalletContentForBetting <= -1) {
                     return;
@@ -71,7 +76,7 @@ public class Roulette implements RouletteClassInterface{
                 cashBettingRatesForFields[j] = selectedRate;
             }
 
-            printsFieldsAndRatesChosenByPlayer(rouletteFields, cashBettingRatesForFields);
+            printClass.printsFieldsAndRatesChosenByPlayer(rouletteFields, cashBettingRatesForFields);
 
             // The ball throw - The draw
             Integer ballThrow = new Random().nextInt(37);
@@ -87,7 +92,9 @@ public class Roulette implements RouletteClassInterface{
     }
 
     // A method that checks the result of the draw and compares the result with the roulette fields bet
-    private static void checksIfItHasBeenWon(Integer[] someFieldsArray, Integer someInteger, Integer[] someRatesArray){
+    private void checksIfItHasBeenWon(Integer[] someFieldsArray, Integer someInteger, Integer[] someRatesArray){
+
+        WalletClass walletClass = new WalletClass();
 
         int winningsConversionFactor = 3; // For winnings a conversion factor of 3 has been assumed initially
         int betsWon = 0;
@@ -114,7 +121,7 @@ public class Roulette implements RouletteClassInterface{
         System.out.println("Total winnings: " + betsWon);
         System.out.println("Total lost: " + betsLost);
 
-        checksWalletAfterGame(betsWon);
+        walletClass.checksWalletAfterGame(betsWon);
 
     }
 

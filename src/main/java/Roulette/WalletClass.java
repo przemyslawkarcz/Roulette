@@ -12,7 +12,7 @@ public class WalletClass implements WallateClassInterface{
     static Integer walletContentParsedToInteger;
 
     // The method creates a wallet before starting the game and concentrates other methods to check e.g. the contents of the wallet, number formats, etc.
-    public static void checksWalletBeforeGame() {
+    public void checksWalletBeforeGame() {
 
         Scanner enteringContentOfWallet = new Scanner(System.in);
         System.out.print("* * * Enter wallet content * * *\n");
@@ -59,7 +59,7 @@ public class WalletClass implements WallateClassInterface{
     }
 
     // The method showing the content of the wallet after the game
-    public static void checksWalletAfterGame(Integer someWin){
+    public void checksWalletAfterGame(Integer someWin){
 
         Integer walletAfterGame = getWalletContentParsedToInteger() + someWin;
         System.out.println("Wallet after game: " + walletAfterGame);
@@ -67,7 +67,7 @@ public class WalletClass implements WallateClassInterface{
     }
 
     // A method showing the content of the wallet when betting on fields
-    public static Integer checksWalletContentWhenBettingOnFields(Integer someInteger){
+    public Integer checksWalletContentWhenBettingOnFields(Integer someInteger){
 
         walletContentParsedToInteger = getWalletContentParsedToInteger() - someInteger;
 
