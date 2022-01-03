@@ -1,7 +1,9 @@
 package Roulette;
 
+import java.util.ArrayList;
+
 public interface PrintClassInterface {
 
-    void printsFieldsAndRatesChosenByPlayer(Integer[] someFieldsArray, Integer[] someRatesArray);
+    ArrayList<Integer> printsFieldsAndRatesChosenByPlayer(Integer[] someFieldsArray, Integer[] someRatesArray);
 
 }
