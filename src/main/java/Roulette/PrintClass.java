@@ -9,9 +9,7 @@ public class PrintClass implements PrintClassInterface{
     // The method prints chosen by player roulette fields and corresponding rates
     public ArrayList<Integer> printsFieldsAndRatesChosenByPlayer(Integer[] someFieldsArray, Integer[] someRatesArray){
 
-        //Integer[] acquiredData = new Integer[someFieldsArray.length + someRatesArray.length];
         ArrayList<Integer> acquiredData = new ArrayList<>();
-
 
         System.out.println("\n* * * Chosen Fields & Rates * * *");
         System.out.print("Fields: ");
