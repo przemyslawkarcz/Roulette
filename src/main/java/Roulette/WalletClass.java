@@ -20,8 +20,8 @@ public class WalletClass implements WalletClassInterface {
 
         try {
             walletContentParsedToInteger = checksDataFormat(walletContent);
-        } catch (ExceptionChecksDataFormat exceptionChekcsDataFormat) {
-            exceptionChekcsDataFormat.getMessage();
+        } catch (ExceptionChecksDataFormat exceptionChecksDataFormat) {
+            exceptionChecksDataFormat.getMessage();
         }
 
         if (walletContentParsedToInteger == null){

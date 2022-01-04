@@ -6,7 +6,9 @@ public interface WalletClassInterface {
 
     Integer checksWalletContent(Integer someInteger);
 
-    void checksWalletAfterGame(Integer someWin);
+    static void checksWalletAfterGame(Integer someWin) {
+
+    }
 
     Integer checksWalletContentWhenBettingOnFields(Integer someInteger);
 
