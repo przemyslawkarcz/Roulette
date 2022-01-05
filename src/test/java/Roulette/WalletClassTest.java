@@ -2,17 +2,78 @@ package Roulette;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static Roulette.ControlClass.checksDataFormat;
 import static Roulette.WalletClass.walletContentParsedToInteger;
 
 public class WalletClassTest {
 
     @Test
+    public void checksWalletBeforeGameTest01(){
+
+        WalletClass walletClass = new WalletClass();
+
+        String walletContent = "100";
+
+        try {
+            walletContentParsedToInteger = checksDataFormat(walletContent);
+        } catch (ExceptionChecksDataFormat exceptionChecksDataFormat) {
+            exceptionChecksDataFormat.getMessage();
+        }
+
+        if (walletContentParsedToInteger == null){
+            return;
+        }
+
+        walletClass.checksWalletContent(walletContentParsedToInteger);
+
+        if (walletContentParsedToInteger <= 0){
+            return;
+        }
+
+        System.out.println("\n* * * Welcome to the game! * * *");
+        System.out.print("Wallet before game: " + walletContentParsedToInteger);
+        System.out.println();
+        Assertions.assertEquals(100, walletContentParsedToInteger);
+
+    }
+
+    @Test
+    public void checksWalletBeforeGameTest02(){
+
+        WalletClass walletClass = new WalletClass();
+
+        String walletContent = "200";
+
+        try {
+            walletContentParsedToInteger = checksDataFormat(walletContent);
+        } catch (ExceptionChecksDataFormat exceptionChecksDataFormat) {
+            exceptionChecksDataFormat.getMessage();
+        }
+
+        if (walletContentParsedToInteger == null){
+            return;
+        }
+
+        walletClass.checksWalletContent(walletContentParsedToInteger);
+
+        if (walletContentParsedToInteger <= 0){
+            return;
+        }
+
+        System.out.println("\n* * * Welcome to the game! * * *");
+        System.out.print("Wallet before game: " + walletContentParsedToInteger);
+        System.out.println();
+        Assertions.assertNotEquals(300, walletContentParsedToInteger);
+
+    }
+
+    @Test
     public void checksWalletContentTest01(){
 
         WalletClass walletClass = new WalletClass();
-        int zero = -1;
+        int someValue = -1;
 
-        Integer walletContent = walletClass.checksWalletContent(zero);
+        Integer walletContent = walletClass.checksWalletContent(someValue);
 
         Assertions.assertEquals(0, walletContent);
 
@@ -22,9 +83,9 @@ public class WalletClassTest {
     public void checksWalletContentTest02(){
 
         WalletClass walletClass = new WalletClass();
-        int zero = -1;
+        int someValue = -2;
 
-        Integer walletContent = walletClass.checksWalletContent(zero);
+        Integer walletContent = walletClass.checksWalletContent(someValue);
 
         Assertions.assertNotEquals(1, walletContent);
 
@@ -34,11 +95,11 @@ public class WalletClassTest {
     public void checksWalletContentTest03(){
 
         WalletClass walletClass = new WalletClass();
-        int zero = 1;
+        int someValue = 2;
 
-        Integer walletContent = walletClass.checksWalletContent(zero);
+        Integer walletContent = walletClass.checksWalletContent(someValue);
 
-        Assertions.assertEquals(1, walletContent);
+        Assertions.assertEquals(2, walletContent);
 
     }
 
@@ -46,11 +107,11 @@ public class WalletClassTest {
     public void checksWalletContentTest04(){
 
         WalletClass walletClass = new WalletClass();
-        int zero = 1;
+        int someValue = 3;
 
-        Integer walletContent = walletClass.checksWalletContent(zero);
+        Integer walletContent = walletClass.checksWalletContent(someValue);
 
-        Assertions.assertNotEquals(0, walletContent);
+        Assertions.assertNotEquals(4, walletContent);
 
     }
 
@@ -98,11 +159,11 @@ public class WalletClassTest {
 
         WalletClass walletClass = new WalletClass();
 
-        walletContentParsedToInteger = 1000;
-        Integer someValue = 1001;
+        walletContentParsedToInteger = 2000;
+        Integer someValue = 2002;
         Integer integer = walletClass.checksWalletContentWhenBettingOnFields(someValue);
 
-        Assertions.assertNotEquals(0, integer);
+        Assertions.assertNotEquals(-3, integer);
 
     }
 
@@ -111,8 +172,8 @@ public class WalletClassTest {
 
         WalletClass walletClass = new WalletClass();
 
-        walletContentParsedToInteger = 1000;
-        Integer someValue = 1000;
+        walletContentParsedToInteger = 3000;
+        Integer someValue = 3000;
         Integer integer = walletClass.checksWalletContentWhenBettingOnFields(someValue);
 
         Assertions.assertEquals(0, integer);
@@ -124,11 +185,11 @@ public class WalletClassTest {
 
         WalletClass walletClass = new WalletClass();
 
-        walletContentParsedToInteger = 1000;
-        Integer someValue = 1000;
+        walletContentParsedToInteger = 4000;
+        Integer someValue = 3999;
         Integer integer = walletClass.checksWalletContentWhenBettingOnFields(someValue);
 
-        Assertions.assertNotEquals(1, integer);
+        Assertions.assertNotEquals(2, integer);
 
     }
 

@@ -10,7 +10,7 @@ public class Main {
 
         // Primary game method
         Roulette roulette = new Roulette();
-        roulette.playRoulette(3);
+        roulette.playRoulette(10);
 
     }
 
