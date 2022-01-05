@@ -2,7 +2,6 @@ package Roulette;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import static Roulette.ControlClass.checksDataFormat;
 
 public class ControlClassTest {

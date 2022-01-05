@@ -2,7 +2,7 @@ package Roulette;
 
 import java.util.Random;
 import java.util.Scanner;
-//import static Roulette.WalletClass.walletContentParsedToInteger;
+import static Roulette.WalletClass.walletContentParsedToInteger;
 
 public class Roulette implements RouletteClassInterface{
 
@@ -25,12 +25,12 @@ public class Roulette implements RouletteClassInterface{
         walletClass.checksWalletBeforeGame();
 
         // Checks data format
-        if (walletClass.walletContentParsedToInteger == null){
+        if (walletContentParsedToInteger == null){
             return;
         }
 
         // Checks content of wallet
-        if (walletClass.walletContentParsedToInteger <= 0){
+        if (walletContentParsedToInteger <= 0){
             return;
         }
 
