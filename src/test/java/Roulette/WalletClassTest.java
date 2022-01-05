@@ -55,6 +55,32 @@ public class WalletClassTest {
     }
 
     @Test
+    public void checksWalletAfterGameTest01(){
+
+        WalletClass walletClass = new WalletClass();
+
+        walletContentParsedToInteger = 500;
+        Integer someValue = 100;
+        Integer walletAfterGame = walletClass.checksWalletAfterGame(someValue);
+
+        Assertions.assertEquals(600, walletAfterGame);
+
+    }
+
+    @Test
+    public void checksWalletAfterGameTest02(){
+
+        WalletClass walletClass = new WalletClass();
+
+        walletContentParsedToInteger = 600;
+        Integer someValue = 200;
+        Integer walletAfterGame = walletClass.checksWalletAfterGame(someValue);
+
+        Assertions.assertNotEquals(700, walletAfterGame);
+
+    }
+
+    @Test
     public void checksWalletContentWhenBettingOnFieldsTest01(){
 
         WalletClass walletClass = new WalletClass();

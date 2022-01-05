@@ -58,10 +58,11 @@ public class WalletClass implements WalletClassInterface {
     }
 
     // The method showing the content of the wallet after the game
-    public void checksWalletAfterGame(Integer someWin){
+    public Integer checksWalletAfterGame(Integer someWin){
 
         Integer walletAfterGame = getWalletContentParsedToInteger() + someWin;
         System.out.println("Wallet after game: " + walletAfterGame);
+        return walletAfterGame;
 
     }
 
